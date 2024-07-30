@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* styles.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/* nav bar */
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 12x; /* Added to move the list slightly to the right of the logo */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    margin-left: 30px;
+    color: #333;
+    font-size: 1em;
+}
+
+
+/* Hero seksjon */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: url('pictures/hero-dog.jpg') no-repeat center center/cover; /* Bakgrunnsbilde */
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: white;
+}
+
+.hero .shop-now {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.8); /* Halvtransparent hvit bakgrunn */
+    color: #333; /* Mørk tekstfarge */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .shop-now:hover {
+    background-color: rgba(255, 255, 255, 1); /* Full hvit bakgrunn ved hover */
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.icons img {
+    width: 20px; /* Set the width of the icons */
+    height: 20px; /* Set the height of the icons */
+    margin-left: 20px; /* Space between icons */
+}
+
+#basket-icon {
+    width: 24px; /* Større bredde for handlekurvikonet */
+    height: 24px; /* Større høyde for handlekurvikonet */
+}
+
+.no-underline {
+    text-decoration: none; /* fjerner underlinje fra lenker med denne klassen */
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.search-input {
+    position: absolute;
+    top: 50%;
+    right: 100%; /* Vises på venstre side av ikonet */
+    transform: translateY(-50%);
+    width: 0;
+    height: 24px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.search-container:hover .search-input {
+    width: 150px;
+    opacity: 1;
+}
+
+.search-container:hover ~ .account-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-container.active .search-input {
+    width: 150px;
+    opacity: 1;
+}
+
+
+
+.products-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.products-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add some padding to the sides */
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Maks 3 produkter per rad */
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* 2 produkter per rad når skjermbredden er mindre enn 900px */
+    }
+}
+
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 produkt per rad når skjermbredden er mindre enn 600px */
+    }
+}
+
+
+.product {
+    padding: 25px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+.product .price {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
